@@ -8,6 +8,8 @@ functions that are passed to this component
 as props are used to update the state of the
 corresponding note object in the state of the
 App component  */
+
+
 const Note = (props) => {
   const updateTitle = (e) => {
     const updatedValue = e.target.value;
@@ -19,6 +21,9 @@ const Note = (props) => {
     const editMeId = props.note.id;
     props.onType(editMeId, "description", updatedValue);
   };
+  const clickDelete = () => {
+    props.removeNote(props.note.id);
+  }
   return (
     <li className="note">
       <input
@@ -34,7 +39,7 @@ const Note = (props) => {
         placeholder="Description..."
         className="note__description"
       />
-      <span className="note__delete">X</span>
+      <span className="note__delete" onClick={clickDelete}>X</span>
     </li>
   );
 };
