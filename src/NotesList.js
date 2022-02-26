@@ -6,7 +6,12 @@ const NotesList = (props) => {
   const searchMatches = props.notes.filter(keepSearchMatches);
 
   const renderNote = (note) => (
-    <Note note={note} key={note.id} onType={props.onType} />
+    <Note 
+    removeNOte={props.removeNote}
+    note={note}
+    key={note.id}
+    onType={props.onType}
+    />
   );
 
   const noteElements = searchMatches.map(renderNote);

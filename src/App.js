@@ -75,6 +75,13 @@ class App extends Component {
       notes: updatedNotes
     });
   };
+
+removeNote =(noteID) => {
+const updatedNotes = this.state.note.filter(note => note.id !== noteId) 
+  this.setState({ notes: updatedNotes })
+} 
+
+
   render() {
     return (
       <div>
@@ -83,7 +90,11 @@ class App extends Component {
           addNote={this.addNote}
           onSearch={this.onSearch}
         />
-        <NotesList notes={this.state.notes} onType={this.onType} />
+        <NotesList 
+        removeNOte = {this.removeNote} 
+        notes={this.state.notes} 
+        onType={this.onType} 
+        />
       </div>
     );
   }
