@@ -1,2 +1,2 @@
-# Finished-Sticky-Note-UI
+# Search-Notes-UI
 Created with CodeSandbox
